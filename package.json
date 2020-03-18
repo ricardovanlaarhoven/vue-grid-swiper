@@ -1,0 +1,24 @@
+{
+  "name": "vue-grid-swiper",
+  "version": "0.1.0",
+  "description": "A swipe carousel for VueJS - Option for full page swiper/carousel",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricardovanlaarhoven/vue-grid-swiper.git"
+  },
+  "keywords": [
+    "swiper",
+    "carousel",
+    "fullpage",
+    "grid",
+    "swiper",
+    "javascript"
+  ],
+  "author": "Ricardo van Laarhoven",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ricardovanlaarhoven/vue-grid-swiper/issues"
+  },
+  "homepage": "https://github.com/ricardovanlaarhoven/vue-grid-swiper#readme"
+}
