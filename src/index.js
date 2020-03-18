@@ -1,7 +1,11 @@
+import Vue2TouchEvents from 'vue2-touch-events'
 import GridSwiper from './components/GridSwiper.vue';
 
-if (typeof window !== 'undefined' && 'Vue' in window) {
-    window.Vue.component('GridSwiper', GridSwiper);
-}
+const VueGridSwiper = {
+    install(Vue, options) {
+        Vue.use(Vue2TouchEvents)
 
-export default GridSwiper;
+    },
+};
+
+export {GridSwiper, VueGridSwiper};

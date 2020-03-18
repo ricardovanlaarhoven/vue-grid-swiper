@@ -1,6 +1,6 @@
 {
   "name": "vue-grid-swiper",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A swipe carousel for VueJS - Option for full page swiper/carousel",
   "main": "src/index.js",
   "repository": {
@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/ricardovanlaarhoven/vue-grid-swiper/issues"
   },
-  "homepage": "https://github.com/ricardovanlaarhoven/vue-grid-swiper#readme"
+  "homepage": "https://github.com/ricardovanlaarhoven/vue-grid-swiper#readme",
+  "dependencies": {
+    "vue": "^2.6.11",
+    "vue2-touch-events": "^2.2.1"
+  }
 }

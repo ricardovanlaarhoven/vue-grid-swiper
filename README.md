@@ -2,18 +2,29 @@
 A swipe carousel for VueJS - Option for full page swiper/carousel
 
 ##installation
-run in your cli:
+####run in your cli:
 
-`npm i vue-grid-swiper`
+```
+npm i vue-grid-swiper
+```
 
-add this to your javascript imports
+####install the package in your main.js
 
-`import GridSwiper from 'vue-grid-swiper';`
+```vue
+import {VueGridSwiper} from "vue-grid-swiper";
+Vue.use(VueGridSwiper);
+```
+
+####add this to your javascript imports in your component file
+
+```
+import {GridSwiper} from 'vue-grid-swiper';
+```
 
 
 
 ##example
-```vueJs
+```vue
 <template>
     <grid-swiper width="100vw" height="100vh">
         <template #0.0>
@@ -32,7 +43,7 @@ add this to your javascript imports
 </template>
 
 <script>
-import GridSwiper from 'vue-grid-swiper';
+import {GridSwiper} from 'vue-grid-swiper';
 
 export default {
     name: 'Example',
