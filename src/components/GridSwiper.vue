@@ -1,26 +1,24 @@
 <template>
-    <v-app>
-        <div class="swipe-grid"
-             v-touch:end="movedHandler"
-             v-touch:moving="movingHandler"
-             v-touch:start="startHandler"
-             :style="{width: width, height: height}"
-             ref="swipeGrid"
+    <div class="swipe-grid"
+         v-touch:end="movedHandler"
+         v-touch:moving="movingHandler"
+         v-touch:start="startHandler"
+         :style="{width: width, height: height}"
+         ref="swipeGrid"
+    >
+        <div class="swipe-grid-wrapper"
+             :style="{marginTop: computedTop}" :class="{animate: animating}"
         >
-            <div class="swipe-grid-wrapper"
-                 :style="{marginTop: computedTop}" :class="{animate: animating}"
-            >
-                <div class="swipe-grid-row" v-for="(n, rowIndex) in slots.length"
-                     :style="{marginLeft: calculateLeft(rowIndex), height: height}"
-                     :class="{animate: animating}"
-                     :key="rowIndex">
-                    <div class="swipe-grid-item" v-for="(n, itemIndex) in slots[rowIndex]" :style="{width: width}">
-                        <slot :name="`${rowIndex}.${itemIndex}`"></slot>
-                    </div>
+            <div class="swipe-grid-row" v-for="(n, rowIndex) in slots.length"
+                 :style="{marginLeft: calculateLeft(rowIndex), height: height}"
+                 :class="{animate: animating}"
+                 :key="rowIndex">
+                <div class="swipe-grid-item" v-for="(n, itemIndex) in slots[rowIndex]" :style="{width: width}">
+                    <slot :name="`${rowIndex}.${itemIndex}`"></slot>
                 </div>
             </div>
         </div>
-    </v-app>
+    </div>
 </template>
 
 <script>
@@ -45,12 +43,12 @@ export default {
         width: {
             type: String,
             required: false,
-            default: '100vw'
+            default: '100vw',
         },
         height: {
             type: String,
             required: false,
-            default: '100vh'
+            default: '100vh',
         },
     },
     mounted() {
@@ -100,7 +98,7 @@ export default {
                 this.isAnimatingX = false;
                 this.isAnimatingY = false;
             }, 300);
-            const hasMovedEnough = this.ifIsMoving(this.slideWidth/3, this.slideHeight/3,
+            const hasMovedEnough = this.ifIsMoving(this.slideWidth / 3, this.slideHeight / 3,
                 () => {
                     if (this.startFingerX > this.currentFingerX) {
                         if (this.slideX[this.slideY] === this.slots[this.slideY] - 1) return;
@@ -112,7 +110,7 @@ export default {
                 },
                 () => {
                     if (this.startFingerY > this.currentFingerY) {
-                        if (this.slideY === this.slots.length-1) return;
+                        if (this.slideY === this.slots.length - 1) return;
                         this.slideY += 1;
                     } else {
                         if (this.slideY === 0) return;
